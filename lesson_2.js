@@ -130,7 +130,10 @@ var val = prompt('Введите число');
 var pow = prompt('Введите степень');
 
 function power(val, pow) {
-    if (pow == 1) {
+    if (pow < 0) {
+        return 1 / val / power(val, -pow - 2)
+    }
+    else if (pow == 0) {
         return val;
     } else {
         return val * power(val, pow - 1);
